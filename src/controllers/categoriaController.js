@@ -1,12 +1,29 @@
+const { json } = require('express')
 const cateogiraModel = require('../models/categoriaModel.js')
 
 module.exports = {
     async listaCategorias(requisicao,resposta ) {
-        cateogiraModel.buscarTodas        
-        return resposta.status(200).json(resultado)
+
+        let categorias = await cateogiraModel.buscarTodas()
+        
+                        
+        
+        console.log("testess---------------------------------------")
+        console.log("testess------------------a---------------------")
+        console.log("testess---------------------------------------")
+        console.log("testess---------------------------------------")
+        
+        /*
+        for( let i in categorias) {
+            console.log(categorias[i].Categoria)
+            json.result.push({
+                codigo: categorias[i].Categoria
+            })
+        }
+        */
+        return resposta.status(200).json({teste:"Teste"})
     }
 }
-
 
 /*
 import fileserv         from "fs"

@@ -1,10 +1,10 @@
 const rotas = require('express').Router()
-const categoriaController = require('../controllers/categoriaController.js')
+const categoriaRoutes = require('../routes/categoriaRoutes.js')
 
 rotas.get('/', (requisicao,resposta)=>{
     resposta.status(200).send('teste de resposta');
 })
 
-rotas.get('/teste', categoriaController.listaCategorias )
+rotas.use(categoriaRoutes)
 
 module.exports = rotas
